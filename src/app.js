@@ -86,7 +86,9 @@ btnSignUp.addEventListener("click", function(event){
     firebase.auth().signOut();
   });
 
-
+ btnLoginGoogle.addEventListener("click", event => {
+    firebase.auth().signin();
+  });
 // add realtime listener
 /**
  * firebaseUser is an object with all information of a login user
@@ -107,6 +109,33 @@ firebase.auth().onAuthStateChanged( function(firebaseUser) {
   }
 });
   
+
+let loginGoogle = document.getElementById("loginGoogle");
+// funcion para iniciar sesioon con Google
+let providerg = new firebase.auth.GoogleAuthProvider();
+loginGoogle.addEventListener("click", providerGoogle = () => {
+  firebase.auth()
+    .signInWithPopup(providerg)
+    .then(function(result) {
+      console.log(result.user);
+      datosUsuario(result.user);
+    });
+  observador();
+});
+
+
+let loginFacebook = document.getElementById("loginFacebook");
+// funcion para iniciar sesion con facebook
+let providerf = new firebase.auth.FacebookAuthProvider();
+loginFacebook.addEventListener('click', providerFacebook = () => {
+  firebase.auth()
+    .signInWithPopup(providerf)
+    .then(function(result) {
+      console.log(result.user);
+      datosUsuario(result.user);
+    });
+  observador();
+});
 
 
 // Navigate whenever the fragment identifier value changes.
