@@ -7,6 +7,8 @@ const txtPassword = document.getElementById("txtPassword");
 const btnLogin = document.getElementById("btnLogin");
 const btnSignUp = document.getElementById("btnSignUp");
 const btnLogOut = document.getElementById("btnLogOut");
+const btnLogGoogle = document.getElementById ("btnLogGoogle");
+const btnLogfacebook = document.getElementById ("btnLogfacebook");
 
 const contentDiv = document.getElementById("content");
 
@@ -86,9 +88,7 @@ btnSignUp.addEventListener("click", function(event){
     firebase.auth().signOut();
   });
 
- btnLoginGoogle.addEventListener("click", event => {
-    firebase.auth().signin();
-  });
+
 // add realtime listener
 /**
  * firebaseUser is an object with all information of a login user
@@ -109,36 +109,32 @@ firebase.auth().onAuthStateChanged( function(firebaseUser) {
   }
 });
   
-
-let loginGoogle = document.getElementById("loginGoogle");
-// funcion para iniciar sesioon con Google
-let providerg = new firebase.auth.GoogleAuthProvider();
-loginGoogle.addEventListener("click", providerGoogle = () => {
-  firebase.auth()
-    .signInWithPopup(providerg)
-    .then(function(result) {
-      console.log(result.user);
-      datosUsuario(result.user);
-    });
-  observador();
-});
-
-
-let loginFacebook = document.getElementById("loginFacebook");
-// funcion para iniciar sesion con facebook
-let providerf = new firebase.auth.FacebookAuthProvider();
-loginFacebook.addEventListener('click', providerFacebook = () => {
-  firebase.auth()
-    .signInWithPopup(providerf)
-    .then(function(result) {
-      console.log(result.user);
-      datosUsuario(result.user);
-    });
-  observador();
-});
-
-
 // Navigate whenever the fragment identifier value changes.
 //TODO
 window.addEventListener("hashchange", router);
 window.addEventListener("load", router);
+//Facebook
+document.getElementById("btnLogfacebook").addEventListener("click", function(){
+    firebase.auth().signInWithPopup(window.data.providerFace).then((result) =>{
+        window.data.sendDataGoogle(result.user);
+        console.log(result.user);
+        const name = result.user.displayName;
+        const email = result.user.email;
+        const photo = result.user.photoURL;
+        showProfile(name, email, photo);
+        return result.user;
+    });
+
+//Google
+document.getElementById("btnLogGoogle").addEventListener("click", function(){
+    firebase.auth().signInWithPopup(window.data.provider).then(function(result){
+        window.data.sendDataGoogle(result.user);
+        console.log(result.user);
+        name = result.user.displayName;
+        email = result.user.email;
+        photo = result.user.photoURL;
+        showProfile(name, email, photo);
+    return result.user;
+    });
+});
+});

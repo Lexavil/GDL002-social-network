@@ -13,22 +13,25 @@
     <input id = "txtEmail" type="email" placeholder="Email"> 
     <input id = "txtPassword" type="password" placeholder= "Contraseña">
     <button id = btnLogin class="btn-btn-action">Iniciar sesión</button>
-    <button id = btnSignUp class="btn-btn-secondary">Crear Cuenta</button>
-    <button id= btn-google class="btnLoginGoogle"> Google</button>
-    <button id= btn-facebook class="loginFacebook"> Facebook</button>
+  
+    <button id= btnLogGoogle class="loginG"> Google</button>
+    <button id= btnLogfacebook class="loginF"> Facebook</button>
+
+      <p>¿No tienes cuenta aún?</p>
+      <button id = btnSignUp class="btn-btn-secondary">Crear Cuenta</button>
 
     <button id = btnLogOut class="btn-btn-action-hide">Cerrar Sesión</button> 
    </section>
 
   <br>
    <div id="content"></div>
-
-  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+ 
   <script src = "config/config.js"></script>
   <script src = "view.js"></script> 
   <script src = "model.js"></script>
   <script src = "controller.js"></script> 
-  
+  <script src="data.js"></script>
   <script src = "app.js"></script>
   
 </body>

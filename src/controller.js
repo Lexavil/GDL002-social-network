@@ -21,3 +21,4 @@ function handleSignedInUser(firebaseUser) {
 function handleSignedOutUser() {
     location.hash = "#login";
 }
+
