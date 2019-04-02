@@ -1,0 +1,38 @@
+/*BOX-SIZING MODEL TO BORDER*/
+*, *:before, *:after {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content:space-between;
+	padding: 1rem 3rem;
+}
+
+#btnLogOut{
+    visibility: hidden;
+}
+
+#error{
+    display: none;
+}
+
+.login-screen {
+	text-align: center;
+	max-width: 10rem;
+	padding: 2rem;
+	margin: 2rem auto;
+}
+
+.login-screen input, .login-screen button{
+	margin: .5rem auto;
+}
+
+p .strong {
+	font-weight: 600;
+}

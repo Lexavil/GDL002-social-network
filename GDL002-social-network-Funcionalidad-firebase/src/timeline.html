@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel = "stylesheet" href="style.css">
+    <title>Document timeline</title>
+</head>
+<body>
+   <section class = "timeline-screen">
+    <nav id = "timeline-nav" class= "timeline-nav flex-row">
+        <h1>madame{code}</h1>
+        <a href="">Salir<img src=""></a>
+    </nav>
+
+    <article id="create-post" class="create-post">
+        <h2>Crear Publicación:</h2>
+        <input id="input-post" type="text" placeholder="¿Qué quieres compartir con la comunidad?">
+        <p>Visible para:</p>
+        <input type="radio" name="public" value="public"> Público
+        <input type="radio" name="friends" value="friends"> Sólo Amigos
+        <br>
+        <button>Publicar</button>
+    </article>
+
+    <h2>Publicaciones recientes:</h2>
+
+    <section id="all-posts">
+        <article id="display-posts">
+            <div id ="own-post">
+                <p id="user-email"><span class="strong">micorreo@es.com</span> compartió:</p><button id="edit-post">Edit</button>
+                <br>
+                <p id="publication" contenteditable="false">Texto EDITABLE de la publicación:</p>
+                <br>
+                <button id="like-post">like</button>
+            </div>
+            <div id ="other-post">
+                    <p id="user-email"><span class="strong">correodeotros@es.com</span> compartió:</p>
+                    <br>
+                    <p id="publication">Texto de la publicación:</p>
+                    <br>
+                    <button id="like-post">like</button>
+            </div>
+        </article>
+  
+</body>
+</html>
