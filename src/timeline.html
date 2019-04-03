@@ -3,6 +3,7 @@ function timelineTemplate() {
     <nav id = "timeline-nav" class= "timeline-nav flex-row">
         <h1>madame{code}</h1>
         <a href="">Salir<img src=""></a>
+        <button id = btnLogOut class="btn-btn-action-hide">Cerrar Sesión</button>
     </nav>
 
     <article id="create-post" class="create-post">
@@ -19,11 +20,43 @@ function timelineTemplate() {
 
     <section id="all-posts">
         <article id="display-posts">
+<<<<<<< HEAD
             <div id ="own-post"> Mis publicaciones
             </div>
             <div id ="other-post"> Publicaciones de otros
             </div>
         </article>
+=======
+            <div id ="own-post">
+                <p id="usuario-email"><span class="strong">micorreo@es.com</span> compartió:</p><button id="edit-post">Edit</button>
+                <br>
+                <p id="publication" contenteditable="false">Texto EDITABLE de la publicación:</p>
+                <br>
+                <button id="like-post">like</button>
+            </div>
+            <div id ="other-post">
+                    <p id="usuario-email"><span class="strong">correodeotros@es.com</span> compartió:</p>
+                    <br>
+                    <p id="publication">Texto de la publicación:</p>
+                    <br>
+                    <button id="like-post">like</button>
+            </div>
+        </article>
+    <!-- </section>
+        <input id = "txtEmail" type="email" placeholder="Email"> 
+        <input id = "txtPassword" type="password" placeholder= "Contraseña">
+        <button id = btnLogin class="btn-btn-action">Iniciar sesión</button>
+        <button id = btnSignUp class="btn-btn-secondary">Crear Cuenta</button>
+        <button id = btnLogOut class="btn-btn-action-hide">Cerrar Sesión</button>
+        <button id= btn-google class="btnLoginGoogle"> Google</button>
+        <button id= btn-facebook class="loginFacebook"> Facebook</button> 
+   </section> -->
+  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+  <script src = "config/config.js"></script>
+  <script src = "view.js"></script> 
+  <script src = "model.js"></script>
+  <script src = "controller.js"></script> 
+>>>>>>> 2cfb7abf6fc7fcfd230411a23fda31bc065b3e8f
   
     </section>
     <div id= "test-db"></div>

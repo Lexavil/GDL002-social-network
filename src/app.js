@@ -7,6 +7,8 @@ const txtPassword = document.getElementById("txtPassword");
 const btnLogin = document.getElementById("btnLogin");
 const btnSignUp = document.getElementById("btnSignUp");
 const btnLogOut = document.getElementById("btnLogOut");
+const btnLogGoogle = document.getElementById ("btnLogGoogle");
+const btnLogfacebook = document.getElementById ("btnLogfacebook");
 
 
 
@@ -111,6 +113,7 @@ firebase.auth().onAuthStateChanged( function(firebaseUser) {
     handleSignedOutUser();
   }
 });
+<<<<<<< HEAD
 
 const signInGoogleBtn = document.getElementById('sign-in-google');
 // Set GOOGLE as provider
@@ -144,3 +147,37 @@ signInGoogleBtn.addEventListener("click", googleSignin );
 // // TODO
 // window.addEventListener("hashchange", router);
 // window.addEventListener("load", router);
+=======
+  
+// Navigate whenever the fragment identifier value changes.
+//TODO
+window.addEventListener("hashchange", router);
+window.addEventListener("load", router);
+//Facebook
+document.getElementById("btnLogfacebook").addEventListener("click", function(){
+    firebase.auth().signInWithPopup(window.data.providerFace).then((result) =>{
+        window.data.sendDataFacebook(result.user);
+        console.log(result.user);
+        const photo = result.user.photoURL;
+        const name = result.user.displayName;
+        const email = result.user.email;
+        
+        showProfile(name, email, photo);
+        return result.user;
+    });
+
+//Google
+document.getElementById("btnLogGoogle").addEventListener("click", function(){
+    firebase.auth().signInWithPopup(window.data.provider).then(function(result){
+        window.data.sendDataGoogle(result.user);
+        console.log(result.user);
+        photo = result.user.photoURL;
+        email = result.user.email;
+         name = result.user.displayName;
+        showProfile(name, email, photo);
+    return result.user;
+    });
+});
+
+});
+>>>>>>> 2cfb7abf6fc7fcfd230411a23fda31bc065b3e8f

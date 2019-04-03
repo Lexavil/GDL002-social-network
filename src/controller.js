@@ -49,8 +49,11 @@ function handleSignedOutUser() {
     location.hash = "#login";
 }
 
+<<<<<<< HEAD
 function createUser(email) {
 let db = firebase.firestore();
     let usersRef = db.collection(USERS_COLLECTION);
     usersRef.doc(`user_${email}`).set({email: email});
 }
+=======
+>>>>>>> 2cfb7abf6fc7fcfd230411a23fda31bc065b3e8f
